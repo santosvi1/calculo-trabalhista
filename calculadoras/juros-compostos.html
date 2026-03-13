@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calcule juros compostos, rendimento de investimentos e crescimento do seu dinheiro ao longo do tempo. Simples e gratuito.">
+  <meta name="keywords" content="calculadora juros compostos, rendimento investimento, juros sobre juros, montante final">
+  <title>Calculadora de Juros Compostos | Seu Dinheiro</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>💰 Seu Dinheiro</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="salario.html">Salário</a></li>
+      <li><a href="ferias.html">Férias</a></li>
+      <li><a href="decimo-terceiro.html">13º Salário</a></li>
+      <li><a href="fgts.html">FGTS</a></li>
+      <li><a href="rescisao.html">Rescisão</a></li>
+      <li><a href="juros-compostos.html" class="ativo">Juros Compostos</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="conteudo">
+
+      <div class="titulo-calculadora">
+        <h2>📈 Calculadora de Juros Compostos</h2>
+        <p>Veja quanto seu dinheiro pode render ao longo do tempo com o poder dos juros sobre juros.</p>
+      </div>
+
+      <section>
+        <h2>O que são juros compostos?</h2>
+        <p>
+          Juros compostos são chamados de <strong>"a oitava maravilha do mundo"</strong> por Einstein.
+          Diferente dos juros simples, aqui os juros de cada período são somados ao capital,
+          gerando juros sobre juros.
+        </p>
+
+        <h3>Como funciona na prática</h3>
+        <p>
+          Se você investir <strong>R$ 1.000</strong> a <strong>1% ao mês</strong>, no primeiro mês
+          rende R$ 10. No segundo mês, você ganha 1% sobre R$ 1.010 — e assim por diante.
+          Com o tempo, o crescimento se torna exponencial.
+        </p>
+
+        <div class="ad-inline">AD</div>
+
+        <h3>Aportes mensais</h3>
+        <p>
+          Adicionar um valor todo mês acelera muito o crescimento. Mesmo aportes pequenos,
+          feitos consistentemente, fazem uma diferença enorme no longo prazo.
+        </p>
+      </section>
+
+      <form>
+        <label for="capital-inicial">Capital Inicial</label>
+        <input id="capital-inicial" type="text" inputmode="numeric" placeholder="R$ 0,00" />
+
+        <label for="aporte-mensal">Aporte Mensal</label>
+        <input id="aporte-mensal" type="text" inputmode="numeric" placeholder="R$ 0,00" />
+
+        <label for="tipo-taxa">Tipo de Taxa</label>
+        <select id="tipo-taxa">
+          <option value="mensal">Mensal (% a.m.)</option>
+          <option value="anual">Anual (% a.a.)</option>
+        </select>
+
+        <label for="taxa-juros">Taxa de Juros (%)</label>
+        <input id="taxa-juros" type="text" inputmode="decimal" placeholder="0,00%" />
+
+        <label for="periodo">Período (meses)</label>
+        <input id="periodo" type="number" min="1" placeholder="Por quantos meses vai investir?" />
+
+        <button id="btn-calcular">Calcular Rendimento</button>
+      </form>
+
+      <div id="resultado"></div>
+
+    </div>
+    <aside>AD</aside>
+  </main>
+
+  <footer>
+    <p>⚠️ Os valores são estimativas. Rentabilidade passada não garante rentabilidade futura.</p>
+    <p>Baseado na fórmula de juros compostos: M = C × (1 + i)^t</p>
+    <p><a href="privacidade.html">Política de Privacidade</a></p>
+  </footer>
+
+  <div class="ad-mobile">AD MOBILE</div>
+  <script src="../js/juros-compostos.js"></script>
+</body>
+</html>

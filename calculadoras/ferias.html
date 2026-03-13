@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calcule o valor das suas férias CLT com 1/3 constitucional e abono pecuniário. Simples, gratuito e atualizado.">
+  <meta name="keywords" content="calculadora férias CLT, 1/3 constitucional, abono pecuniário, férias trabalhista">
+  <title>Calculadora de Férias CLT | Seu Dinheiro</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>💰 Seu Dinheiro</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="salario.html">Salário</a></li>
+      <li><a href="ferias.html" class="ativo">Férias</a></li>
+      <li><a href="decimo-terceiro.html">13º Salário</a></li>
+      <li><a href="fgts.html">FGTS</a></li>
+      <li><a href="rescisao.html">Rescisão</a></li>
+      <li><a href="juros-compostos.html">Juros Compostos</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="conteudo">
+
+      <div class="titulo-calculadora">
+        <h2>🏖️ Calculadora de Férias</h2>
+        <p>Calcule o valor exato das suas férias com 1/3 constitucional, abono pecuniário e adiantamento do 13º.</p>
+      </div>
+
+      <section>
+        <h2>Como funciona o cálculo de férias?</h2>
+        <p>
+          Todo trabalhador com carteira assinada tem direito a <strong>30 dias de férias remuneradas</strong>
+          após 12 meses de trabalho, acrescidas de 1/3 constitucional obrigatório por lei.
+        </p>
+
+        <h3>1/3 Constitucional</h3>
+        <p>
+          O 1/3 é sempre calculado sobre os <strong>30 dias integrais</strong>, mesmo quando você vende
+          10 dias (abono pecuniário). Isso está consolidado pela Súmula 328 do TST.
+        </p>
+
+        <div class="ad-inline">AD</div>
+
+        <h3>Abono Pecuniário (venda de 10 dias)</h3>
+        <p>
+          Você pode vender até 10 dias de férias. O abono equivale ao valor dos 10 dias
+          acrescido de 1/3 constitucional sobre eles. Por ter natureza <strong>indenizatória</strong>
+          (Art. 144 CLT), o abono <strong>não sofre desconto de INSS nem de IR</strong>.
+        </p>
+
+        <h3>Adiantamento do 13º</h3>
+        <p>
+          Você pode solicitar o adiantamento de 50% do 13º salário junto com as férias,
+          conforme previsto na Lei 4.749/65. É um direito do trabalhador e não pode ser negado.
+        </p>
+      </section>
+
+      <form>
+        <label for="salario-base">Salário Base</label>
+        <input id="salario-base" type="text" inputmode="numeric" placeholder="R$ 0,00" />
+
+        <label for="meses-trabalhados">Meses Trabalhados no Período (1–12)</label>
+        <input id="meses-trabalhados" type="number" min="1" max="12" placeholder="Ex: 12 para férias completas" />
+
+        <label for="vender-ferias">Vender 10 dias de férias (abono pecuniário)?</label>
+        <select id="vender-ferias">
+          <option value="nao">Não — vou descansar os 30 dias</option>
+          <option value="sim">Sim — quero vender 10 dias</option>
+        </select>
+
+        <label for="adiantamento-13">Solicitar adiantamento de 50% do 13º?</label>
+        <select id="adiantamento-13">
+          <option value="nao">Não</option>
+          <option value="sim">Sim — quero o adiantamento junto</option>
+        </select>
+
+        <button id="btn-calcular">Calcular Férias</button>
+      </form>
+
+      <div id="resultado"></div>
+
+    </div>
+    <aside>AD</aside>
+  </main>
+
+  <footer>
+    <p>⚠️ Os valores são estimativas. Consulte sempre um contador ou advogado trabalhista.</p>
+    <p>Baseado na <a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm" target="_blank">CLT</a>, Súmula 328 TST e Lei 4.749/65.</p>
+    <p><a href="privacidade.html">Política de Privacidade</a></p>
+  </footer>
+
+  <div class="ad-mobile">AD MOBILE</div>
+  <script src="../js/utils.js"></script>
+  <script src="../js/ferias.js"></script>
+</body>
+</html>

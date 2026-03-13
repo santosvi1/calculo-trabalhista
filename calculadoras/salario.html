@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calcule seu salário líquido com horas extras, descontos de INSS, IRPF e FGTS. Simples, gratuito e atualizado com as regras da CLT.">
+  <meta name="keywords" content="calculadora salário CLT, horas extras, desconto INSS, IRPF, salário líquido, calculadora trabalhista">
+  <title>Calculadora de Salário CLT | Seu Dinheiro</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>💰 Seu Dinheiro</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="salario.html" class="ativo">Salário</a></li>
+      <li><a href="ferias.html">Férias</a></li>
+      <li><a href="decimo-terceiro.html">13º Salário</a></li>
+      <li><a href="fgts.html">FGTS</a></li>
+      <li><a href="rescisao.html">Rescisão</a></li>
+      <li><a href="juros-compostos.html">Juros Compostos</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="conteudo">
+
+      <div class="titulo-calculadora">
+        <h2>💼 Calculadora de Salário</h2>
+        <p>Calcule seu salário líquido com horas extras e todos os descontos obrigatórios.</p>
+      </div>
+
+      <section>
+        <h2>Como funciona o cálculo?</h2>
+        <p>
+          O salário mensal é calculado com base em <strong>220 horas mensais</strong>,
+          que é o padrão definido pela CLT para jornada de 44 horas semanais.
+        </p>
+
+        <h3>Horas extras 50%</h3>
+        <p>
+          São as horas trabalhadas além da jornada normal em <strong>dias úteis e sábados</strong>.
+          Cada hora vale 50% a mais que a hora normal.
+        </p>
+
+        <div class="ad-inline">AD</div>
+
+        <h3>Horas extras 100%</h3>
+        <p>
+          São as horas trabalhadas em <strong>domingos e feriados</strong>.
+          Cada hora vale o dobro da hora normal.
+        </p>
+
+        <h3>Descontos obrigatórios</h3>
+        <p>
+          Sobre o salário bruto incidem o <strong>INSS</strong> (tabela progressiva)
+          e o <strong>IRPF</strong> (calculado sobre o salário bruto menos o INSS).
+          O FGTS é depositado pelo empregador e não desconta do seu salário.
+        </p>
+      </section>
+
+      <form>
+        <label for="salario-base">Salário Base</label>
+        <input id="salario-base" type="text" min="0" placeholder="Informe seu salário base" />
+
+        <label for="horas-extras-50">Horas Extras 50%</label>
+        <input id="horas-extras-50" type="number" min="0" placeholder="Quantidade de horas extras 50%" />
+
+        <label for="horas-extras-100">Horas Extras 100%</label>
+        <input id="horas-extras-100" type="number" min="0" placeholder="Quantidade de horas extras 100%" />
+
+        <button id="btn-calcular">Calcular Salário</button>
+      </form>
+
+      <div id="resultado"></div>
+
+    </div>
+    <aside>AD</aside>
+  </main>
+
+  <footer>
+    <p>⚠️ Os valores são estimativas. Consulte sempre um contador ou advogado trabalhista.</p>
+    <p>Baseado na <a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm" target="_blank">CLT - Consolidação das Leis do Trabalho</a></p>
+    <p><a href="privacidade.html">Política de Privacidade</a></p>
+  </footer>
+
+  <div class="ad-mobile">AD MOBILE</div>
+  <script src="../js/utils.js"></script>
+  <script src="../js/salario.js"></script>
+</body>
+</html>

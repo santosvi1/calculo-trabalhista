@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --header-height: 64px;
+  --fundo-principal: #0f1117;
+  --fundo-card: #1a1d27;
+  --fundo-input: #252836;
+  --cor-primaria: #00c896;
+  --cor-texto: #e2e8f0;
+  --cor-texto-fraco: #718096;
+  --borda: #2d3148;
+}
+
+body {
+  background-color: var(--fundo-principal);
+  color: var(--cor-texto);
+  font-family: 'Outfit', sans-serif;
+}
+
+/* ─── Header ─────────────────────────────────────────── */
+header {
+  width: 100%;
+  height: var(--header-height);
+  background: var(--fundo-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--borda);
+}
+
+header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  letter-spacing: -0.5px;
+}
+
+/* ─── Nav ────────────────────────────────────────────── */
+nav {
+  background-color: var(--fundo-card);
+  width: 100%;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--borda);
+  position: sticky;
+  top: var(--header-height);
+  z-index: 999;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav ul li a {
+  display: block;
+  padding: 14px 20px;
+  color: var(--cor-texto-fraco);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+nav ul li a:hover,
+nav ul li a.ativo {
+  color: var(--cor-primaria);
+  border-bottom: 2px solid var(--cor-primaria);
+}
+
+/* ─── Main ───────────────────────────────────────────── */
+main {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ─── Aside (AD) ─────────────────────────────────────── */
+aside {
+  background: var(--fundo-card);
+  border: 1px dashed var(--borda);
+  border-radius: 8px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-texto-fraco);
+  font-size: 12px;
+}
+
+/* ─── Conteúdo ───────────────────────────────────────── */
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 20px;
+}
+
+/* ─── Título da calculadora ──────────────────────────── */
+.titulo-calculadora {
+  border-left: 4px solid var(--cor-primaria);
+  padding-left: 16px;
+}
+
+.titulo-calculadora h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.titulo-calculadora p {
+  color: var(--cor-texto-fraco);
+  font-size: 14px;
+}
+
+/* ─── Section explicativa ────────────────────────────── */
+section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+section h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--cor-primaria);
+}
+
+section p {
+  color: var(--cor-texto-fraco);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* ─── Ad inline ──────────────────────────────────────── */
+.ad-inline {
+  width: 100%;
+  height: 90px;
+  border: 1px dashed var(--borda);
+  background-color: var(--fundo-card);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-texto-fraco);
+  font-size: 12px;
+}
+
+/* ─── Form ───────────────────────────────────────────── */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--fundo-card);
+  color: var(--cor-texto);
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid var(--borda);
+  gap: 16px;
+}
+
+form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cor-texto-fraco);
+  margin-bottom: -8px;
+}
+
+form input, form select {
+  padding: 12px 16px;
+  width: 100%;
+  background-color: var(--fundo-input);
+  color: var(--cor-texto);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.2s ease;
+}
+
+form select option {
+  background-color: var(--fundo-input);
+}
+
+form input:focus, form select:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow:
+    0 0 3px rgba(0, 200, 150, 0.15),
+    0 0 8px rgba(0, 200, 150, 0.2);
+}
+
+form button {
+  padding: 14px;
+  cursor: pointer;
+  background-color: var(--cor-primaria);
+  color: #0f1117;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 200, 150, 0.4);
+}
+
+/* ─── Resultado (dl/dt/dd zebrado) ───────────────────── */
+dl {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--borda);
+}
+
+.linha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.linha:last-child {
+  border-bottom: none;
+}
+
+.linha:nth-child(odd) {
+  background-color: var(--fundo-card);
+}
+
+.linha:nth-child(even) {
+  background-color: var(--fundo-input);
+}
+
+.linha.destaque {
+  background-color: rgba(0, 200, 150, 0.08);
+  border-top: 1px solid rgba(0, 200, 150, 0.2);
+}
+
+.linha.destaque dt,
+.linha.destaque dd {
+  color: var(--cor-primaria);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+dt {
+  color: var(--cor-texto-fraco);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+dd {
+  color: var(--cor-texto);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* ─── Erro banner ────────────────────────────────────── */
+.erro-banner {
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  color: #ff6b6b;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Footer ─────────────────────────────────────────── */
+footer {
+  background-color: var(--fundo-card);
+  border-top: 1px solid var(--borda);
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--cor-texto-fraco);
+  font-size: 14px;
+  line-height: 2;
+}
+
+footer a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+footer a:hover {
+  opacity: 0.8;
+}
+
+/* ─── Ad Mobile ──────────────────────────────────────── */
+.ad-mobile {
+  display: none;
+}
+
+/* ─── Responsivo ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    display: none;
+  }
+
+  .ad-inline {
+    height: 60px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+
+  nav ul li a {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  /* ad mobile fixo no rodapé */
+  .ad-mobile {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--fundo-card);
+    border-top: 1px solid var(--borda);
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-texto-fraco);
+    font-size: 12px;
+    z-index: 999;
+  }
+
+  /* evita conteúdo ficar atrás do ad */
+  footer {
+    padding-bottom: 80px;
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calcule o saldo do seu FGTS e a multa de 40% em caso de demissão sem justa causa. Simples e gratuito.">
+  <meta name="keywords" content="calculadora FGTS, fundo de garantia, multa 40%, demissão sem justa causa">
+  <title>Calculadora de FGTS | Seu Dinheiro</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>💰 Seu Dinheiro</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="salario.html">Salário</a></li>
+      <li><a href="ferias.html">Férias</a></li>
+      <li><a href="decimo-terceiro.html">13º Salário</a></li>
+      <li><a href="fgts.html" class="ativo">FGTS</a></li>
+      <li><a href="rescisao.html">Rescisão</a></li>
+      <li><a href="juros-compostos.html">Juros Compostos</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="conteudo">
+
+      <div class="titulo-calculadora">
+        <h2>🏦 Calculadora de FGTS</h2>
+        <p>Calcule seu saldo do FGTS e a multa de 40% em caso de demissão sem justa causa.</p>
+      </div>
+
+      <section>
+        <h2>Como funciona o FGTS?</h2>
+        <p>
+          O Fundo de Garantia do Tempo de Serviço (FGTS) é um depósito mensal obrigatório
+          feito pelo empregador, equivalente a <strong>8% do salário bruto</strong> do trabalhador.
+        </p>
+
+        <h3>Multa de 40%</h3>
+        <p>
+          Em caso de demissão <strong>sem justa causa</strong>, o empregador deve pagar uma multa
+          equivalente a <strong>40% do saldo total do FGTS</strong> acumulado durante o contrato.
+        </p>
+
+        <div class="ad-inline">AD</div>
+
+        <h3>Quando posso sacar?</h3>
+        <p>
+          O saque do FGTS é permitido em situações como demissão sem justa causa,
+          aposentadoria, compra de imóvel, doenças graves e calamidade pública.
+        </p>
+      </section>
+
+      <form>
+        <label for="salario-base">Salário Base Mensal</label>
+        <input id="salario-base" type="number" min="0" placeholder="Informe seu salário base" />
+
+        <label for="meses-trabalhados">Meses Trabalhados</label>
+        <input id="meses-trabalhados" type="number" min="1" placeholder="Total de meses no emprego" />
+
+        <label for="tipo-rescisao">Tipo de Rescisão</label>
+        <select id="tipo-rescisao">
+          <option value="sem-justa-causa">Demissão sem Justa Causa</option>
+          <option value="justa-causa">Demissão por Justa Causa</option>
+          <option value="pedido">Pedido de Demissão</option>
+        </select>
+
+        <button id="btn-calcular">Calcular FGTS</button>
+      </form>
+
+      <div id="resultado"></div>
+
+    </div>
+    <aside>AD</aside>
+  </main>
+
+  <footer>
+    <p>⚠️ Os valores são estimativas. Consulte sempre um contador ou advogado trabalhista.</p>
+    <p>Baseado na <a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm" target="_blank">CLT - Consolidação das Leis do Trabalho</a></p>
+    <p><a href="privacidade.html">Política de Privacidade</a></p>
+  </footer>
+
+  <script src="../js/fgts.js"></script>
+  <div class="ad-mobile">AD MOBILE</div>
+</body>
+</html>

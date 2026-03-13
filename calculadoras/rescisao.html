@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calcule o valor da sua rescisão trabalhista com saldo de salário, férias, 13º, aviso prévio e FGTS. Simples e gratuito.">
+  <meta name="keywords" content="calculadora rescisão, demissão CLT, aviso prévio, saldo salário, verbas rescisórias">
+  <title>Calculadora de Rescisão | Seu Dinheiro</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>💰 Seu Dinheiro</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="salario.html">Salário</a></li>
+      <li><a href="ferias.html">Férias</a></li>
+      <li><a href="decimo-terceiro.html">13º Salário</a></li>
+      <li><a href="fgts.html">FGTS</a></li>
+      <li><a href="rescisao.html" class="ativo">Rescisão</a></li>
+      <li><a href="juros-compostos.html">Juros Compostos</a></li> 
+    </ul>
+  </nav>
+
+  <main>
+    <div class="conteudo">
+
+      <div class="titulo-calculadora">
+        <h2>📋 Calculadora de Rescisão</h2>
+        <p>Calcule todas as verbas rescisórias: saldo de salário, férias, 13º, aviso prévio e FGTS.</p>
+      </div>
+
+      <section>
+        <h2>O que compõe a rescisão?</h2>
+        <p>
+          A rescisão trabalhista é o conjunto de <strong>verbas que o empregado tem direito</strong>
+          ao encerramento do contrato de trabalho. Os valores variam conforme o tipo de demissão.
+        </p>
+
+        <h3>Demissão sem Justa Causa</h3>
+        <p>
+          O trabalhador tem direito a: saldo de salário, férias proporcionais + 1/3,
+          13º proporcional, aviso prévio e <strong>multa de 40% do FGTS</strong>.
+        </p>
+
+        <div class="ad-inline">AD</div>
+
+        <h3>Pedido de Demissão</h3>
+        <p>
+          O trabalhador recebe: saldo de salário, férias proporcionais + 1/3 e 13º proporcional.
+          <strong>Não tem direito</strong> ao aviso prévio indenizado nem à multa do FGTS.
+        </p>
+
+        <h3>Demissão por Justa Causa</h3>
+        <p>
+          O trabalhador recebe apenas o <strong>saldo de salário</strong> e as férias vencidas (se houver).
+          Perde direito ao 13º proporcional, aviso prévio e multa do FGTS.
+        </p>
+      </section>
+
+      <form>
+        <label for="salario-base">Salário Base Mensal</label>
+        <input id="salario-base" type="number" min="0" placeholder="Informe seu salário base" />
+
+        <label for="dias-trabalhados">Dias Trabalhados no Mês</label>
+        <input id="dias-trabalhados" type="number" min="1" max="31" placeholder="Dias trabalhados no último mês" />
+
+        <label for="meses-trabalhados">Meses Trabalhados no Ano</label>
+        <input id="meses-trabalhados" type="number" min="1" max="12" placeholder="Meses para 13º e férias proporcionais" />
+
+        <label for="meses-fgts">Total de Meses no Emprego</label>
+        <input id="meses-fgts" type="number" min="1" placeholder="Total de meses para cálculo do FGTS" />
+
+        <label for="tipo-rescisao">Tipo de Rescisão</label>
+        <select id="tipo-rescisao">
+          <option value="sem-justa-causa">Demissão sem Justa Causa</option>
+          <option value="pedido">Pedido de Demissão</option>
+          <option value="justa-causa">Demissão por Justa Causa</option>
+        </select>
+
+        <button id="btn-calcular">Calcular Rescisão</button>
+      </form>
+
+      <div id="resultado"></div>
+
+    </div>
+    <aside>AD</aside>
+  </main>
+
+  <footer>
+    <p>⚠️ Os valores são estimativas. Consulte sempre um contador ou advogado trabalhista.</p>
+    <p>Baseado na <a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm" target="_blank">CLT - Consolidação das Leis do Trabalho</a></p>
+    <p><a href="privacidade.html">Política de Privacidade</a></p>
+  </footer>
+
+  <script src="../js/rescisao.js"></script>
+  <div class="ad-mobile">AD MOBILE</div>
+</body>
+</html>

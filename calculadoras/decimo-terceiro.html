@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calcule o valor do seu 13º salário proporcional aos meses trabalhados. Simples, gratuito e atualizado com as regras da CLT.">
+  <meta name="keywords" content="calculadora 13º salário, décimo terceiro, gratificação natalina, CLT">
+  <title>Calculadora de 13º Salário | Seu Dinheiro</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>💰 Seu Dinheiro</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="salario.html">Salário</a></li>
+      <li><a href="ferias.html">Férias</a></li>
+      <li><a href="decimo-terceiro.html" class="ativo">13º Salário</a></li>
+      <li><a href="fgts.html">FGTS</a></li>
+      <li><a href="rescisao.html">Rescisão</a></li>
+      <li><a href="juros-compostos.html">Juros Compostos</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="conteudo">
+
+      <div class="titulo-calculadora">
+        <h2>🎄 Calculadora de 13º Salário</h2>
+        <p>Calcule o valor proporcional do seu décimo terceiro salário mês a mês.</p>
+      </div>
+
+      <section>
+        <h2>Como funciona o 13º salário?</h2>
+        <p>
+          O 13º salário (gratificação natalina) é um direito garantido pela <strong>Lei nº 4.090/62</strong>
+          a todo trabalhador com carteira assinada. É pago em duas parcelas ao longo do ano.
+        </p>
+
+        <h3>1ª Parcela</h3>
+        <p>
+          Paga entre <strong>fevereiro e novembro</strong>, equivale a metade do salário bruto,
+          sem descontos de INSS ou IR.
+        </p>
+
+        <div class="ad-inline">AD</div>
+
+        <h3>2ª Parcela</h3>
+        <p>
+          Paga até o dia <strong>20 de dezembro</strong>. Sobre esta parcela incidem os descontos
+          de INSS e Imposto de Renda.
+        </p>
+
+        <h3>Proporcional</h3>
+        <p>
+          Quem trabalhou menos de 12 meses no ano tem direito ao valor <strong>proporcional</strong>
+          aos meses trabalhados. Cada mês equivale a 1/12 do salário.
+        </p>
+      </section>
+
+      <form>
+        <label for="salario-base">Salário Base</label>
+        <input id="salario-base" type="number" min="0" placeholder="Informe seu salário base" />
+
+        <label for="meses-trabalhados">Meses Trabalhados no Ano (1-12)</label>
+        <input id="meses-trabalhados" type="number" min="1" max="12" placeholder="Quantos meses trabalhou este ano?" />
+
+        <label for="parcela">Qual parcela calcular?</label>
+        <select id="parcela">
+          <option value="primeira">1ª Parcela (sem descontos)</option>
+          <option value="segunda">2ª Parcela (com INSS e IR)</option>
+          <option value="total">Total das duas parcelas</option>
+        </select>
+
+        <button id="btn-calcular">Calcular 13º Salário</button>
+      </form>
+
+      <div id="resultado"></div>
+
+    </div>
+    <aside>AD</aside>
+  </main>
+
+  <footer>
+    <p>⚠️ Os valores são estimativas. Consulte sempre um contador ou advogado trabalhista.</p>
+    <p>Baseado na <a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm" target="_blank">CLT - Consolidação das Leis do Trabalho</a></p>
+    <p><a href="privacidade.html">Política de Privacidade</a></p>
+  </footer>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/decimo-terceiro.js"></script>
+  <div class="ad-mobile">AD MOBILE</div>
+</body>
+</html>
