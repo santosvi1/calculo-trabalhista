@@ -1,0 +1,48 @@
+.pagina-texto {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+    .pagina-texto h2 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .pagina-texto .subtitulo {
+      color: var(--cor-texto-fraco);
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+    .pagina-texto h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 32px 0 10px;
+      color: var(--cor-primaria);
+    }
+    .pagina-texto p, .pagina-texto li {
+      color: var(--cor-texto-fraco);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+    .pagina-texto ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+    .pagina-texto ul li { margin-bottom: 6px; }
+    .cards-sobre {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .card-sobre {
+      background: var(--fundo-card);
+      border: 1px solid var(--borda);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+    .card-sobre .icone { font-size: 28px; margin-bottom: 8px; }
+    .card-sobre p {
+      font-size: 13px;
+      margin: 0;
+    }

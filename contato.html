@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entre em contato com o Seu Dinheiro — sugestões, correções ou dúvidas sobre as calculadoras trabalhistas.">
+  <title>Contato | Seu Dinheiro</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/contato.css">
+</head>
+<body>
+
+  <header>
+    <h1>💰 Seu Dinheiro</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="salario.html">Salário</a></li>
+      <li><a href="ferias.html">Férias</a></li>
+      <li><a href="decimo-terceiro.html">13º Salário</a></li>
+      <li><a href="fgts.html">FGTS</a></li>
+      <li><a href="rescisao.html">Rescisão</a></li>
+      <li><a href="juros-compostos.html">Juros Compostos</a></li>
+    </ul>
+  </nav>
+
+  <div class="pagina-texto">
+    <h2>Contato</h2>
+    <p class="subtitulo">Sugestões, correções ou dúvidas — adoramos ouvir você</p>
+
+    <p>
+      Encontrou um cálculo errado? Tem uma sugestão de nova calculadora?
+      Preencha o formulário abaixo e retornaremos em breve.
+    </p>
+
+    <h3>Envie sua mensagem</h3>
+
+    <form class="form-contato" id="form-contato">
+      <div>
+        <label for="nome">Nome</label>
+        <input id="nome" type="text" placeholder="Seu nome" />
+      </div>
+      <div>
+        <label for="email">E-mail</label>
+        <input id="email" type="email" placeholder="seu@email.com" />
+      </div>
+      <div>
+        <label for="assunto">Assunto</label>
+        <select id="assunto">
+          <option value="">Selecione o assunto</option>
+          <option value="erro">Erro em um cálculo</option>
+          <option value="sugestao">Sugestão de calculadora</option>
+          <option value="legislacao">Legislação desatualizada</option>
+          <option value="outro">Outro</option>
+        </select>
+      </div>
+      <div>
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" placeholder="Descreva sua mensagem..."></textarea>
+      </div>
+      <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+    </form>
+
+    <div class="aviso-form" style="margin-top: 16px">
+      📌 Este formulário usa o <strong>Formspree</strong> para envio de e-mails.
+      Suas informações são usadas apenas para responder à sua mensagem e não são
+      compartilhadas com terceiros.
+    </div>
+
+  </div>
+
+  <footer>
+    <p>⚠️ Os valores são estimativas. Consulte sempre um contador ou advogado trabalhista.</p>
+    <p><a href="privacidade.html">Política de Privacidade</a> · <a href="sobre.html">Sobre</a> · <a href="contato.html">Contato</a></p>
+  </footer>
+
+  <div class="ad-mobile">AD MOBILE</div>
+  <script src="./js/contato.js"></script>
+</body>
+</html>

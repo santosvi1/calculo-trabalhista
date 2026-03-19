@@ -1,0 +1,85 @@
+.pagina-texto {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+    .pagina-texto h2 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .pagina-texto .subtitulo {
+      color: var(--cor-texto-fraco);
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+    .pagina-texto h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 32px 0 10px;
+      color: var(--cor-primaria);
+    }
+    .pagina-texto p {
+      color: var(--cor-texto-fraco);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+    .form-contato {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .form-contato input,
+    .form-contato textarea,
+    .form-contato select {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--fundo-input);
+      border: 1px solid var(--borda);
+      border-radius: 8px;
+      color: var(--cor-texto);
+      font-size: 15px;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    .form-contato textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+    .form-contato input:focus,
+    .form-contato textarea:focus,
+    .form-contato select:focus {
+      outline: none;
+      border-color: var(--cor-primaria);
+      box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.15);
+    }
+    .form-contato label {
+      font-size: 14px;
+      color: var(--cor-texto-fraco);
+      margin-bottom: 4px;
+      display: block;
+    }
+    .btn-enviar {
+      background: var(--cor-primaria);
+      color: #0f1117;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+    .btn-enviar:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 200, 150, 0.3);
+    }
+    .aviso-form {
+      padding: 14px 16px;
+      background: var(--fundo-card);
+      border: 1px solid var(--borda);
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--cor-texto-fraco);
+    }
