@@ -7,6 +7,58 @@
   <meta name="keywords" content="calculadora rescisão, demissão CLT, aviso prévio, saldo salário, verbas rescisórias">
   <title>Calculadora de Rescisão | Seu Dinheiro</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .datas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .datas-grid label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
+      color: var(--cor-texto-fraco);
+    }
+
+    .datas-grid input[type="date"] {
+      width: 100%;
+      padding: 10px 14px;
+      background: var(--fundo-input);
+      border: 1px solid var(--borda);
+      border-radius: 8px;
+      color: var(--cor-texto);
+      font-size: 0.95rem;
+      font-family: inherit;
+      color-scheme: dark;
+    }
+
+    .datas-grid input[type="date"]:focus {
+      outline: none;
+      border-color: var(--cor-primaria);
+      box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.15);
+    }
+
+    .info-periodo {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: var(--fundo-input);
+      border-radius: 8px;
+      border-left: 3px solid var(--cor-primaria);
+      font-size: 0.85rem;
+      color: var(--cor-texto-fraco);
+      display: none;
+    }
+
+    .info-periodo span {
+      color: var(--cor-primaria);
+      font-weight: 600;
+    }
+
+    @media (max-width: 480px) {
+      .datas-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -21,7 +73,7 @@
       <li><a href="decimo-terceiro.html">13º Salário</a></li>
       <li><a href="fgts.html">FGTS</a></li>
       <li><a href="rescisao.html" class="ativo">Rescisão</a></li>
-      <li><a href="juros-compostos.html">Juros Compostos</a></li> 
+      <li><a href="juros-compostos.html">Juros Compostos</a></li>
     </ul>
   </nav>
 
@@ -30,7 +82,7 @@
 
       <div class="titulo-calculadora">
         <h2>📋 Calculadora de Rescisão</h2>
-        <p>Calcule todas as verbas rescisórias: saldo de salário, férias, 13º, aviso prévio e FGTS.</p>
+        <p>Informe o período trabalhado e calcule todas as verbas rescisórias automaticamente.</p>
       </div>
 
       <section>
@@ -62,17 +114,26 @@
       </section>
 
       <form>
+        <label>Período Trabalhado</label>
+        <div class="datas-grid">
+          <div>
+            <label for="data-admissao">Data de Admissão</label>
+            <input id="data-admissao" type="date" />
+          </div>
+          <div>
+            <label for="data-saida">Data de Saída</label>
+            <input id="data-saida" type="date" />
+          </div>
+        </div>
+
+        <div class="info-periodo" id="info-periodo">
+          Tempo de empresa: <span id="tempo-empresa">—</span> &nbsp;|&nbsp;
+          Meses no ano: <span id="meses-ano">—</span> &nbsp;|&nbsp;
+          Dias no último mês: <span id="dias-mes">—</span>
+        </div>
+
         <label for="salario-base">Salário Base Mensal</label>
-        <input id="salario-base" type="number" min="0" placeholder="Informe seu salário base" />
-
-        <label for="dias-trabalhados">Dias Trabalhados no Mês</label>
-        <input id="dias-trabalhados" type="number" min="1" max="31" placeholder="Dias trabalhados no último mês" />
-
-        <label for="meses-trabalhados">Meses Trabalhados no Ano</label>
-        <input id="meses-trabalhados" type="number" min="1" max="12" placeholder="Meses para 13º e férias proporcionais" />
-
-        <label for="meses-fgts">Total de Meses no Emprego</label>
-        <input id="meses-fgts" type="number" min="1" placeholder="Total de meses para cálculo do FGTS" />
+        <input id="salario-base" type="text" inputmode="numeric" placeholder="R$ 0,00" />
 
         <label for="tipo-rescisao">Tipo de Rescisão</label>
         <select id="tipo-rescisao">
@@ -96,7 +157,8 @@
     <p><a href="privacidade.html">Política de Privacidade</a></p>
   </footer>
 
-  <script src="../js/rescisao.js"></script>
   <div class="ad-mobile">AD MOBILE</div>
+  <script src="../js/utils.js"></script>
+  <script src="../js/rescisao.js"></script>
 </body>
 </html>

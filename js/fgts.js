@@ -1,39 +1,28 @@
-const salarioBase      = document.querySelector("#salario-base")
-const mesesTrabalhados = document.querySelector("#meses-trabalhados")
-const tipoRescisao     = document.querySelector("#tipo-rescisao")
-const botaoCalcular    = document.querySelector("#btn-calcular")
-const form             = document.querySelector("form")
+const salarioBaseInput      = document.querySelector("#salario-base")
+const mesesTrabalhadosInput = document.querySelector("#meses-trabalhados")
+const tipoRescisaoInput     = document.querySelector("#tipo-rescisao")
+const botaoCalcular         = document.querySelector("#btn-calcular")
+const form                  = document.querySelector("form")
 
 form.addEventListener("submit", (e) => e.preventDefault())
 
-function formatarMoeda(valor) {
-  return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-}
+// ✅ passa o elemento, não o valor
+aplicarMascaraMoeda(salarioBaseInput)
 
-function mostrarErro(mensagem) {
-  const erroExistente = document.querySelector(".erro-banner")
-  if (erroExistente) erroExistente.remove()
-
-  const banner = document.createElement("div")
-  banner.className = "erro-banner"
-  banner.textContent = `⚠️ ${mensagem}`
-
-  form.insertBefore(banner, form.firstChild)
-  setTimeout(() => banner.remove(), 3000)
-}
-
+// ─── Validação ───────────────────────────────────────────
 function validarInputs(salario, meses) {
   if (!salario || salario <= 0) {
-    mostrarErro("Informe um salário válido!")
+    mostrarErro(form, "Informe um salário válido!")  // ✅ passa form
     return false
   }
   if (!meses || meses < 1) {
-    mostrarErro("Informe os meses trabalhados!")
+    mostrarErro(form, "Informe os meses trabalhados!")
     return false
   }
   return true
 }
 
+// ─── Cálculo ─────────────────────────────────────────────
 function calcularFGTS(salario, meses, tipo) {
   const depositoMensal = salario * 0.08
   const saldoTotal     = depositoMensal * meses
@@ -43,42 +32,47 @@ function calcularFGTS(salario, meses, tipo) {
   return { depositoMensal, saldoTotal, multa40, totalSaque, tipo }
 }
 
-function mostrarResultado(resultado) {
+// ─── Mostrar resultado ────────────────────────────────────
+function mostrarResultado(r) {
   const divResultado = document.querySelector("#resultado")
 
-  const linhaMulta = resultado.tipo === "sem-justa-causa" ? `
-    <div class="linha">
-      <dt>Multa de 40%</dt>
-      <dd>${formatarMoeda(resultado.multa40)}</dd>
-    </div>` : `
-    <div class="linha">
-      <dt>Multa de 40%</dt>
-      <dd>Não aplicável</dd>
-    </div>`
+  const linhaMulta = r.tipo === "sem-justa-causa"
+    ? `<div class="linha">
+        <dt>Multa Rescisória (40%)</dt>
+        <dd>${formatarMoeda(r.multa40)}</dd>
+       </div>`
+    : `<div class="linha">
+        <dt>Multa Rescisória (40%)</dt>
+        <dd>Não aplicável</dd>
+       </div>`
 
   divResultado.innerHTML = `
     <dl>
       <div class="linha">
-        <dt>Depósito Mensal (8%)</dt>
-        <dd>${formatarMoeda(resultado.depositoMensal)}</dd>
+        <dt>Depósito Mensal (8% do salário)</dt>
+        <dd>${formatarMoeda(r.depositoMensal)}</dd>
       </div>
       <div class="linha">
         <dt>Saldo Total Acumulado</dt>
-        <dd>${formatarMoeda(resultado.saldoTotal)}</dd>
+        <dd>${formatarMoeda(r.saldoTotal)}</dd>
       </div>
       ${linhaMulta}
       <div class="linha destaque">
-        <dt>Total a Receber</dt>
-        <dd>${formatarMoeda(resultado.totalSaque)}</dd>
+        <dt>Total a Sacar</dt>
+        <dd>${formatarMoeda(r.totalSaque)}</dd>
       </div>
     </dl>
+    ${r.tipo === "sem-justa-causa"
+      ? `<p class="nota-legal">⚖️ Além da multa de 40% sacável, o empregador recolhe 10% do saldo à União (Lei 9.491/97). Esse valor não é sacado pelo trabalhador.</p>`
+      : ""}
   `
 }
 
+// ─── Evento do botão ─────────────────────────────────────
 botaoCalcular.addEventListener("click", () => {
-  const salario = Number(salarioBase.value)
-  const meses   = Number(mesesTrabalhados.value)
-  const tipo    = tipoRescisao.value
+  const salario = limparMoeda(salarioBaseInput.value) // ✅ limparMoeda, não Number()
+  const meses   = Number(mesesTrabalhadosInput.value)
+  const tipo    = tipoRescisaoInput.value
 
   if (!validarInputs(salario, meses)) return
 
